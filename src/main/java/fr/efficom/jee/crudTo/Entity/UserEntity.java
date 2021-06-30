@@ -20,6 +20,10 @@ public class UserEntity implements Serializable {
     @NotNull
     private int idUser;
 
+    @Column(name = "username")
+    @NotNull
+    private String userName;
+
     @Column(name = "email")
     @Pattern(regexp = "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)", message = "Veulliez de saisir une adresse mail valide.")
     private String email;
@@ -31,8 +35,8 @@ public class UserEntity implements Serializable {
     @Column(name = "avatar")
     private String avatarpath;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<CommentEntity> Comment = new ArrayList<>();
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<CommentEntity> comment = new ArrayList<>();
 
     public UserEntity() {
 
@@ -71,21 +75,30 @@ public class UserEntity implements Serializable {
     }
 
     public List<CommentEntity> getComment() {
-        return Comment;
+        return comment;
     }
 
     public void setComment(List<CommentEntity> comment) {
-        Comment = comment;
+        this.comment = comment;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
                 .add("idUser", idUser)
+                .add("userName", userName)
                 .add("email", email)
                 .add("password", password)
                 .add("avatarpath", avatarpath)
-                .add("Comment", Comment)
+                .add("Comment", comment)
                 .toString();
     }
 }

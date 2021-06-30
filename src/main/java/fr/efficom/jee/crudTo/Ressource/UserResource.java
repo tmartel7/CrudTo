@@ -19,9 +19,7 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/all")
     public Response getAllUsers() {
-        //call service
-        // userService.
-        return Response.ok().build();
+        return Response.ok(userSrevice.findAllUser()).build();
     }
 
 
