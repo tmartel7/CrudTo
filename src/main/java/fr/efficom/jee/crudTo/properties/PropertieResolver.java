@@ -1,4 +1,4 @@
-package fr.cours.jee;
+package fr.efficom.jee.crudTo.properties;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
@@ -8,10 +8,10 @@ import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class SampleBean {
+public class PropertieResolver {
 
   @Inject
-  @ConfigProperty(name = "message")
+  @ConfigProperty(name = "dico")
   private String message;
 
   public String getMessage() {

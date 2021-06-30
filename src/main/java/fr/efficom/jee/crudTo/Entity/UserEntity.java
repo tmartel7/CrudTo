@@ -1,72 +1,91 @@
 package fr.efficom.jee.crudTo.Entity;
 
+import com.google.common.base.MoreObjects;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "USER")
-public class UserEntity {
+public class UserEntity implements Serializable {
 
     @Column(name = "idUser")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @NotNull
     private int idUser;
 
-    @Column(name = "pseudo")
-    private String pseudo;
+    @Column(name = "email")
+    @Pattern(regexp = "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)", message = "Veulliez de saisir une adresse mail valide.")
+    private String email;
 
     @Column(name = "password")
+    @Size(min = 12, message = "Le mot de passe doit contenir au moins 12 caractères")
     private String password;
 
-    @Column(name = "lastname")
-    private String lastName;
+    @Column(name = "avatar")
+    private String avatarpath;
 
-    @Column(name = "firstname")
-    private String firstName;
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CommentEntity> Comment = new ArrayList<>();
 
     public UserEntity() {
-    }
 
-    public UserEntity(String pseudo, String password, String lastName, String firstName) {
-        this.pseudo = pseudo;
-        this.password = password;
-        this.lastName = lastName;
-        this.firstName = firstName;
     }
 
     public int getIdUser() {
         return idUser;
     }
+
     public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
 
-    public String getPseudo() {
-        return pseudo;
+    public String getEmail() {
+        return email;
     }
-    public void setPseudo(String pseudo) {
-        this.pseudo = pseudo;
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getAvatarpath() {
+        return avatarpath;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setAvatarpath(String avatarpath) {
+        this.avatarpath = avatarpath;
     }
 
+    public List<CommentEntity> getComment() {
+        return Comment;
+    }
 
+    public void setComment(List<CommentEntity> comment) {
+        Comment = comment;
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("idUser", idUser)
+                .add("email", email)
+                .add("password", password)
+                .add("avatarpath", avatarpath)
+                .add("Comment", Comment)
+                .toString();
+    }
 }

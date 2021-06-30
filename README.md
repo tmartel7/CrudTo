@@ -1,4 +1,4 @@
-# Project fr.cours.jee/jyesseffe
+# Project crudTo
 
 Steps to run this project:
 
