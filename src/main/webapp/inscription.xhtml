@@ -17,26 +17,29 @@
 <body>
 
     <div class="container">
-        <form action="">
+        <h:form>
 
             <div class="mb-3">
                 <label for="InputEmail1" class="form-label">Adresse email</label>
-                <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" />
+                <h:inputText class="form-control" id="InputEmail1" value="#{managedUserBean.user.email}"
+                    required="true" />
 
                 <div id="emailAide" class="form-text">Votre email est en sécurité avec nous ;)</div>
             </div>
 
             <div class="mb-3">
                 <label for="username" class="form-label">Adresse email</label>
-                <input type="text" class="form-control" id="username" />
+                <input type="text" class="form-control" id="username" value="#{managedUserBean.user.name}"
+                    required="true" />
             </div>
 
             <div class="mb-3">
                 <label for="password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="password" />
+                <h:inputSecret class="form-control" id="password" value="#{managedUserBean.user.pass}"
+                    required="true" />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            <h:commandButton type="submit" class="btn btn-primary">Submit</h:commandButton>
+        </h:form>
     </div>
 </body>
 
