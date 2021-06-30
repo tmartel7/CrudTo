@@ -26,6 +26,11 @@ public class UserRepository {
         return new ArrayList<>();
     }
 
+    public boolean isExist(String user, String password) {
+        // em.createQuery("select count(e) from UserEntity e where e.email")
+        return false;
+    }
+
     //getaUSerByid
     //findauserByname
     //findUser
