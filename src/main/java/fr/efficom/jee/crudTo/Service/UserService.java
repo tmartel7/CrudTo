@@ -22,11 +22,11 @@ public class UserService {
         return userEntityList.stream().map(UserMapper::EntityToDomain).collect(Collectors.toList());
     }
 
-    public boolean isConnectValid(UserEntity userEntity) {
+    public UserEntity isConnectValid(UserEntity userEntity) {
         if (userEntity != null && StringUtils.isNotEmpty(userEntity.getEmail()) && StringUtils.isNotEmpty(userEntity.getPassword())) {
-            //      userRepository.
+            return userRepository.findFromLogin(userEntity.getEmail(), userEntity.getPassword());
         }
-        return false;
+        return null;
     }
 
 

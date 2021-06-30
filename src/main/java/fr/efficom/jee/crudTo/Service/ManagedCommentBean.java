@@ -8,5 +8,5 @@ import java.io.Serializable;
 @RequestScoped
 public class ManagedCommentBean implements Serializable {
 
-
+//todo
 }
