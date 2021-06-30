@@ -1,0 +1,37 @@
+GET http://localhost:8080/jyesseffe/resources/sample
+
+###
+GET http://localhost:8080/jyesseffe/resources/sample/titans
+
+###
+POST http://localhost:8080/jyesseffe/resources/sample/test
+Content-Type: application/json
+
+{
+  "name": "riri",
+  "age": 12
+}
+
+###
+GET http://localhost:8080/coursjee8/resources/amangousse/
+
+###
+POST http://localhost:8080/coursjee8/resources/amangousse/
+Content-Type: application/json
+
+{
+  "name": "riri",
+  "job": "impostor"
+}
+
+###
+POST http://localhost:8080/coursjee8/resources/amangousse/
+Content-Type: application/json
+
+{
+  "name": "fifi",
+  "job": "crewmate"
+}
+
+###
+DELETE http://localhost:8080/coursjee8/resources/amangousse/riri
