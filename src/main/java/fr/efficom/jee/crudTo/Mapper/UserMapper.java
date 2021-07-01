@@ -13,4 +13,12 @@ public class UserMapper {
         user.setComment(CommentMapper.entityListToDomain(userEntity.getComment()));
         return user;
     }
+
+    public static UserEntity domainToEntity(User user) {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setEmail(user.getEmail());
+        userEntity.setUserName(user.getUserName());
+        userEntity.setPassword(user.getPassword());
+        return userEntity;
+    }
 }

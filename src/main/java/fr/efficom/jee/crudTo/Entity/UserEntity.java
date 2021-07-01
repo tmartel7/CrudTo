@@ -1,6 +1,7 @@
 package fr.efficom.jee.crudTo.Entity;
 
 import com.google.common.base.MoreObjects;
+import org.checkerframework.common.aliasing.qual.Unique;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -25,6 +26,7 @@ public class UserEntity implements Serializable {
     private String userName;
 
     @Column(name = "email")
+    @Unique
     @Pattern(regexp = "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)", message = "Veulliez de saisir une adresse mail valide.")
     private String email;
 

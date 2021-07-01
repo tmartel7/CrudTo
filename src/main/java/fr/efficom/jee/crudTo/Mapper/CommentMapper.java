@@ -2,7 +2,9 @@ package fr.efficom.jee.crudTo.Mapper;
 
 import fr.efficom.jee.crudTo.Domain.Comment;
 import fr.efficom.jee.crudTo.Entity.CommentEntity;
+import fr.efficom.jee.crudTo.Entity.UserEntity;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,6 +19,14 @@ public class CommentMapper {
         comment.setCreateDate(commentEntity.getCreateDate());
         comment.setContent(commentEntity.getContent());
         return comment;
+    }
+
+    public static CommentEntity domainToEntity(Comment comment, UserEntity userEntity) {
+        CommentEntity commentEntity = new CommentEntity();
+        commentEntity.setCreateDate(LocalDateTime.now());
+        commentEntity.setContent(commentEntity.getContent());
+        commentEntity.setOwner(userEntity);
+        return commentEntity;
     }
 
 

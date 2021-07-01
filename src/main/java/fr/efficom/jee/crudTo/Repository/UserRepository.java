@@ -39,9 +39,19 @@ public class UserRepository {
         return userEntity;
     }
 
+    public void delette(UserEntity userEntity) {
+        em.remove(userEntity);
+    }
+
     public UserEntity findUserByID(int id) {
         Query query = em.createQuery("select e from UserEntity e where e.idUser=:id");
         query.setParameter("id", id);
+        return (UserEntity) query.getSingleResult();
+    }
+
+    public UserEntity findUserByEmail(String email) {
+        Query query = em.createQuery("select e from UserEntity e where e.email=:email");
+        query.setParameter("email", email);
         return (UserEntity) query.getSingleResult();
     }
 

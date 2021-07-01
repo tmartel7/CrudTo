@@ -5,7 +5,7 @@ create table user
 (
     iduser   int primary key not null,
     username varchar(30),
-    email    varchar(255),
+    email    varchar(255) unique,
     password varchar(255),
     avatar   varchar(255)
 );
