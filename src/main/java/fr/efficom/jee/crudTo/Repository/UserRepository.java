@@ -59,7 +59,7 @@ public class UserRepository {
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery<UserEntity> query = criteriaBuilder.createQuery(UserEntity.class);
         Root<UserEntity> userEntityRoot = query.from(UserEntity.class);
-        query.where(criteriaBuilder.equal(userEntityRoot.get("userName"), username));
+        query.where(criteriaBuilder.like(userEntityRoot.get("userName"), username));
 
         List<UserEntity> results = em.createQuery(query).getResultList();
         return results;
