@@ -5,20 +5,20 @@ import com.google.common.base.MoreObjects;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "COMMENT")
+@Table(name = "comment")
 public class CommentEntity implements Serializable {
 
     @Column(name = "idComment")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @NotNull
-    private int idUser;
+    private int id;
 
     @Column(name = "createDate")
-    private LocalDate createDate;
+    private LocalDateTime createDate;
 
     @Column(name = "content")
     @NotNull
@@ -31,19 +31,19 @@ public class CommentEntity implements Serializable {
     public CommentEntity() {
     }
 
-    public int getIdUser() {
-        return idUser;
+    public int getId() {
+        return id;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public LocalDate getCreateDate() {
+    public LocalDateTime getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(LocalDate createDate) {
+    public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
 
@@ -66,7 +66,7 @@ public class CommentEntity implements Serializable {
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
-                .add("idUser", idUser)
+                .add("id", id)
                 .add("createDate", createDate)
                 .add("content", content)
                 .add("owner", owner)

@@ -9,6 +9,7 @@ public class UserMapper {
         User user = new User();
         user.setAvatarpath(userEntity.getAvatarpath());
         user.setEmail(userEntity.getEmail());
+        user.setUserName(userEntity.getUserName());
         user.setComment(CommentMapper.entityListToDomain(userEntity.getComment()));
         return user;
     }

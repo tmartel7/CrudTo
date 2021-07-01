@@ -1,18 +1,18 @@
 package fr.efficom.jee.crudTo.Domain;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Comment {
 
-    private LocalDate createDate;
+    private LocalDateTime createDate;
 
     private String content;
 
-    public LocalDate getCreateDate() {
+    public LocalDateTime getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(LocalDate createDate) {
+    public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
 

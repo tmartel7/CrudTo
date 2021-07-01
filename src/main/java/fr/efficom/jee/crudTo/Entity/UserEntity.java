@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "user")
 public class UserEntity implements Serializable {
 
     @Column(name = "idUser")

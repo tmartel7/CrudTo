@@ -9,7 +9,6 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -20,7 +19,11 @@ public class UserRepository {
 
 
     public List<UserEntity> getAllUser() {
-        return new ArrayList<>();
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<UserEntity> query = criteriaBuilder.createQuery(UserEntity.class);
+        Root<UserEntity> userEntityRoot = query.from(UserEntity.class);
+        List<UserEntity> results = em.createQuery(query).getResultList();
+        return results;
     }
 
     public UserEntity findFromLogin(String email, String password) {
