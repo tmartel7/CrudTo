@@ -35,10 +35,10 @@ public class CommentService {
     }
 
     public void deleteComment(Comment comment) {
-        if (comment != null && StringUtils.isNotEmpty(comment.getUserEmail()) && comment.getCreateDate() != null) {
-            CommentEntity commentEntity = commentRepository.findByEmailAndDate(comment.getUserEmail(), comment.getCreateDate());
+        if (comment != null && StringUtils.isNotEmpty(comment.getUserEmail()) && StringUtils.isNotEmpty(comment.getContent())) {
+            CommentEntity commentEntity = commentRepository.findByEmailAndContent(comment.getUserEmail(), comment.getContent());
             if (commentEntity != null) {
-                commentRepository.deleteComment(commentEntity);
+                commentRepository.deleteComment(commentEntity.getId());
             } else {
                 throw new EntityNotFoundException("le commentaire n'as pas été trouvé");
             }

@@ -24,7 +24,7 @@ public class CommentMapper {
     public static CommentEntity domainToEntity(Comment comment, UserEntity userEntity) {
         CommentEntity commentEntity = new CommentEntity();
         commentEntity.setCreateDate(LocalDateTime.now());
-        commentEntity.setContent(commentEntity.getContent());
+        commentEntity.setContent(comment.getContent());
         commentEntity.setOwner(userEntity);
         return commentEntity;
     }

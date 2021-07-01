@@ -15,11 +15,10 @@ import java.util.List;
 @Table(name = "user")
 public class UserEntity implements Serializable {
 
-    @Column(name = "idUser")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @NotNull
-    private int idUser;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "iduser")
+    private Long idUser;
 
     @Column(name = "username")
     @NotNull
@@ -37,18 +36,18 @@ public class UserEntity implements Serializable {
     @Column(name = "avatar")
     private String avatarpath;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<CommentEntity> comment = new ArrayList<>();
 
     public UserEntity() {
 
     }
 
-    public int getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 

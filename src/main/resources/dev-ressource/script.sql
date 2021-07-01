@@ -3,7 +3,7 @@ drop table if exists user cascade;
 
 create table user
 (
-    iduser   int primary key not null,
+    iduser   int primary key not null auto_increment,
     username varchar(30),
     email    varchar(255) unique,
     password varchar(255),
@@ -12,7 +12,7 @@ create table user
 
 create table comment
 (
-    idcomment  int primary key not null,
+    idcomment  int primary key not null auto_increment,
     content    varchar(255)    not null,
     createdate timestamp,
     iduser     int,
