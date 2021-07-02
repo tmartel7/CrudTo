@@ -603,4 +603,9 @@
             <remote-destination host="${jboss.mail.server.host:localhost}" port="${jboss.mail.server.port:25}"/>
         </outbound-socket-binding>
     </socket-binding-group>
+    <deployments>
+        <deployment name="crudTo.war" runtime-name="crudTo.war">
+            <fs-archive path="E:\projet\CrudTo\target\crudTo.war"/>
+        </deployment>
+    </deployments>
 </server>
