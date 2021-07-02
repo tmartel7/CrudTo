@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+<html lang="en"
+      xml:lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
 
 <head>
 
@@ -27,9 +30,9 @@
         <h2>Connexion </h2>
         <!-- Login Form -->
         <h:form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login"/>
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe"/>
-            <input type="submit" class="fadeIn fourth" value="Se Connecté"/>
+            <h:inputText value="#{ManagedUserBean.user.login}" required="true" styleClass="fadeIn second" />
+            <h:inputText value="#{ManagedUserBean.user.pass}" required="true" styleClass="fadeIn third" />
+            <h:commandButton action="#{ManagedUserBean.connect}"/>
         </h:form>
 
         <!-- Remind Passowrd -->

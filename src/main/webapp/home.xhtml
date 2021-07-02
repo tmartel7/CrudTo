@@ -26,116 +26,31 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="candidates-list">
-                            <td class="title">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt=""/>
-                                </div>
-                                <div class="candidate-list-details">
-                                    <div class="candidate-list-info">
-                                        <div class="candidate-list-title">
-                                            <h5 class="mb-0"><a href="#">Brooke Kelly</a></h5>
-                                        </div>
-
+                        <ui:repeat var="userEntity" values="#ManagedUserBean.findUserByName"  varStatus="status">
+                            <tr class="candidates-list">
+                                <td class="title">
+                                    <div class="thumb">
+                                        <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt=""/>
                                     </div>
-                                </div>
-                            </td>
+                                    <div class="candidate-list-details">
+                                        <div class="candidate-list-info">
+                                            <div class="candidate-list-title">
+                                                <h5 class="mb-0"><a href="#">Brooke Kelly</a></h5>
+                                            </div>
 
-                            <td>
-                                <ul class="list-unstyled mb-0 d-flex justify-content-end">
-                                    <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
-
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="candidates-list">
-                            <td class="title">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""/>
-                                </div>
-                                <div class="candidate-list-details">
-                                    <div class="candidate-list-info">
-                                        <div class="candidate-list-title">
-                                            <h5 class="mb-0"><a href="#">Ronald Bradley</a></h5>
                                         </div>
-
                                     </div>
-                                </div>
-                            </td>
+                                </td>
 
-                            <td>
-                                <ul class="list-unstyled mb-0 d-flex justify-content-end">
-                                    <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
+                                <td>
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-end">
+                                        <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
 
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="candidates-list">
-                            <td class="title">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=""/>
-                                </div>
-                                <div class="candidate-list-details">
-                                    <div class="candidate-list-info">
-                                        <div class="candidate-list-title">
-                                            <h5 class="mb-0"><a href="#">Rafael Briggs</a></h5>
-                                        </div>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </ui:repeat>
 
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <ul class="list-unstyled mb-0 d-flex justify-content-end">
-                                    <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
-
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="candidates-list">
-                            <td class="title">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""/>
-                                </div>
-                                <div class="candidate-list-details">
-                                    <div class="candidate-list-info">
-                                        <div class="candidate-list-title">
-                                            <h5 class="mb-0"><a href="#">Vickie Meyer</a></h5>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <ul class="list-unstyled mb-0 d-flex justify-content-end">
-                                    <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
-
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr class="candidates-list">
-                            <td class="title">
-                                <div class="thumb">
-                                    <img class="img-fluid" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt=""/>
-                                </div>
-                                <div class="candidate-list-details">
-                                    <div class="candidate-list-info">
-                                        <div class="candidate-list-title">
-                                            <h5 class="mb-0"><a href="#">Nichole Haynes</a></h5>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <ul class="list-unstyled mb-0 d-flex justify-content-end">
-                                    <li><a href="#" class="text-primary" data-toggle="tooltip" title="" data-original-title="view"><i class="far fa-eye"></i></a></li>
-
-                                </ul>
-                            </td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
