@@ -43,7 +43,7 @@ public class UserRessource {
     @Path("/create")
     public Response createUser(User user) {
         userSrevice.createUser(user);
-        return Response.ok().build();
+        return Response.status(Response.Status.CREATED).build();
     }
 
     // update possible du password ou/et username

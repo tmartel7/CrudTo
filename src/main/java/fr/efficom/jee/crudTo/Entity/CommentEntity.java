@@ -14,8 +14,7 @@ public class CommentEntity implements Serializable {
     @Column(name = "idComment")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @NotNull
-    private int id;
+    private Long id;
 
     @Column(name = "createDate")
     private LocalDateTime createDate;
@@ -31,11 +30,11 @@ public class CommentEntity implements Serializable {
     public CommentEntity() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,7 +68,6 @@ public class CommentEntity implements Serializable {
                 .add("id", id)
                 .add("createDate", createDate)
                 .add("content", content)
-                .add("owner", owner)
                 .toString();
     }
 }

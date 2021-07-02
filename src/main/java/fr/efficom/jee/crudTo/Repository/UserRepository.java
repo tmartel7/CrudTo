@@ -43,7 +43,7 @@ public class UserRepository {
         em.remove(userEntity);
     }
 
-    public UserEntity findUserByID(int id) {
+    public UserEntity findUserByID(Long id) {
         Query query = em.createQuery("select e from UserEntity e where e.idUser=:id");
         query.setParameter("id", id);
         return (UserEntity) query.getSingleResult();
@@ -59,7 +59,7 @@ public class UserRepository {
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery<UserEntity> query = criteriaBuilder.createQuery(UserEntity.class);
         Root<UserEntity> userEntityRoot = query.from(UserEntity.class);
-        query.where(criteriaBuilder.like(userEntityRoot.get("userName"), username));
+        query.where(criteriaBuilder.like(userEntityRoot.get("userName"), username + "%"));
 
         List<UserEntity> results = em.createQuery(query).getResultList();
         return results;
